@@ -12,6 +12,8 @@
     <nav class="sidebar-nav">
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
 
+      <a class="sidebar-nav-item" href="{{ site.ctf }}">My CTF writeups</a>
+
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
@@ -26,7 +28,7 @@
         {% endif %}
       {% endfor %}
 
-      <a class="sidebar-nav-item" href="{{ site.author.url }}">@{{ site.author.name }}</a>
+      <a class="sidebar-nav-item" href="{{ site.author.url }}">Github</a>
     </nav>
 
     <p style="font-size: 13px;">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
