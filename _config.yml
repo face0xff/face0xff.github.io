@@ -6,7 +6,8 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            "face0xff's den"
+title:            "/den/face0xff"
+tab:              "face0xff's den"
 tagline:          'My personal blog'
 description:      'My personal blog. <a href="https://github.com/face0xff" target="_blank">@face0xff</a>'
 url:              https://blog.feisu.win/
