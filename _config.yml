@@ -9,9 +9,9 @@ permalink:        pretty
 title:            "/den/face0xff"
 tab:              "face0xff's den"
 tagline:          'My personal blog'
-description:      'My personal blog.'
+description:      'My personal blog'
 url:              https://blog.feisu.win/
-baseurl:          '/'
+baseurl:          "/"
 
 author:
   name:           'face0xff'
