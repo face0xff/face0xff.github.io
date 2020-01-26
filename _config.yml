@@ -11,7 +11,7 @@ tab:              "face0xff's den"
 tagline:          'My personal blog'
 description:      'My personal blog'
 url:              https://blog.feisu.win/
-baseurl:          "/"
+baseurl:          "/a"
 
 author:
   name:           'face0xff'
