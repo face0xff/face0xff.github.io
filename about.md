@@ -3,28 +3,13 @@ layout: page
 title: About me
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+I am a french student in engineering and cybersecurity.
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+I love computer science, security and challenges. I love learning and sharing my knowledge.
 
-There are currently two themes built on Poole:
+As a huge CTF enthusiast, I created [SHRECS](https://ctftime.org/team/89273), a team with fellow students of my university.
+We're not the best, nor do we have much free time to do plenty of competitions together, but we're having fun.
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
-
-Learn more and contribute on [GitHub](https://github.com/poole).
-
-## Setup
-
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+I also really enjoy development, especially web development.
+I often have several projects going on but I tend never to finish them, so my Github is pretty much empty, which is sad.
+Someday I will motivate myself and have some slick stuff showcased. 
