@@ -14,4 +14,6 @@ I also really enjoy development, especially web development.
 I often have several projects going on but I tend never to finish them, so my Github is pretty much empty, which is sad.
 Someday I will motivate myself and have some slick stuff showcased. 
 
-![Art by 1041uuu](/public/lain.webp)
+<p style="text-align: center;">
+  <img src="{{ site.url }}public/lain.webp" alt="Lain" title="Art by 1041uuu" style="width: 400px; height: 400px;" />
+</p>
