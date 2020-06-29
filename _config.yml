@@ -12,6 +12,7 @@ tagline:          'My personal blog'
 description:      'My personal blog'
 url:              https://blog.feisu.win/
 baseurl:          "/"
+baseimg:          "/public/images"
 
 author:
   name:           'face0xff'
