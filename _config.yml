@@ -10,7 +10,7 @@ title:            "/den/face0xff"
 tab:              "face0xff's den"
 tagline:          'My personal blog'
 description:      'My personal blog'
-url:              https://blog.feisu.win/
+url:              https://face.0xff.re/
 baseurl:          "/"
 baseimg:          "/public/images"
 
@@ -26,5 +26,5 @@ version:          2.1.0
 github:
   repo:           https://github.com/face0xff/face0xff.github.io
 
-ctf:              https://ctf.feisu.win/
+ctf:              https://ctf.0xff.re/
 shrecs:           https://shrecs.fr/
