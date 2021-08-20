@@ -1,0 +1,7 @@
+body {
+  font-feature-settings: "liga" 0, "tnum", "case" 0, "calt", "zero" 0, "ss01", "locl";
+}
+
+.post-content p {
+  text-align: justify !important;
+}
