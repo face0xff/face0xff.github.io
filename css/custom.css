@@ -5,3 +5,14 @@ body {
 .post-content p {
   text-align: justify !important;
 }
+
+code.has-jax {
+  -webkit-font-smoothing: antialiased;
+  background: inherit !important;
+  border: none !important;
+  font-size: 100%;
+}
+
+table {
+  table-layout: auto;
+}
