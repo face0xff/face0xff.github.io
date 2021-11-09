@@ -196,7 +196,7 @@ sub_16EA();
 <p>The condition $((i = k) \land (\lvert j - l \rvert = 1)) \lor ((j = l) \land (\lvert i - k \rvert = 1))$ gives out a big clue. $(i, j)$ and $(k, l)$ probably represent coordinates on a $4 \times 4$ grid, and the condition checks whether <strong>two cells are adjacent</strong>.</p>
 <p><code>dword_6060</code> and <code>dword_6460</code> are both global arrays of length 256, indexed by $64i + 16j + 4k + l$, a base 4 decomposition to identify the couple of cells $(i, j), (k, l)$. The first array receives the read end of the pipe, and the second array receives the write end.</p>
 <p>By symmetry, a pipe is also created for the $(k, l), (i, j)$ couple. A potential intuition at this point is that each cell has a pipe&rsquo;s read end and a pipe&rsquo;s write end linked with all of its adjacent cells. In other words, each cell can read from an adjacent cell and write to an adjacent cell; they can communicate in some bi-directional way.</p>
-<p><img src=/img/pipedream/diagram1.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Communicating cells?"></p>
+<img src=/img/pipedream/diagram1.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Communicating cells?">
 <p>There are also two other global arrays, <code>dword_6860</code> and <code>dword_68E0</code>, of length 32. These store the read and write ends of two pipes associated with a cell $(i, j)$. We&rsquo;re not sure what this means yet&mldr;</p>
 <p>For now, we will rename the four aforementioned arrays $P$, $Q$, $R$ and $S$. We will also rename <code>sub_16EA</code> as <code>init_pipes</code>.</p>
 <h2 id=understanding-the-big-picture>Understanding the big picture</h2>
@@ -282,7 +282,7 @@ LABEL_10:
 <li>each process is associated to a cell number according to the initial random permutation (remember the <code>cell_number</code> global variable? it has a different value for each child process!)</li>
 </ul>
 <p>At this point and with our different assumptions, we can break down the architecture this way:</p>
-<p><img src=/img/pipedream/diagram2.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="First idea of the architecture"></p>
+<img src=/img/pipedream/diagram2.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="First idea of the architecture">
 <p>The black arrows represent the $P$ and $Q$ arrays of pipes between child processes, whereas the blue arrows represent the $R$ and $S$ arrays of pipes that allow communication between each child and the master process. Of course, the master process is linked with every child process, but the diagram would have been too cluttered if I were to draw all the pipes.</p>
 <p>The first interaction happens when the master process sends the serial to the process whose cell number is $0$. Now what happens next? Let&rsquo;s continue reversing the child loop to find out.</p>
 <p>The <code>select</code> function is finally called with <code>readfds</code>, the set of file descriptors to be monitored. For instance, in the above diagram, the cell $0$ monitors the reading ends of the pipes coming from the cells $9$, $6$ and $15$, as well as the one coming from the master process.</p>
@@ -332,7 +332,7 @@ exit(<span style=color:#ae81ff>1</span>);
 </code></pre></div><p>The <code>sub_1D05</code> function seems to send a certain message to each child process, and wait for a response, which is put in <code>state</code>. It is also probably used to poll on the child processes to check whether they&rsquo;re still alive or not (hence the <code>"I lost my child :("</code> that we usually get when we run the binary).</p>
 <p>We may assume <code>sub_1D05</code> <strong>asks each cell for their cell number</strong>. The constructed state array is then compared to $(0, \ldots, 15)$. This is the condition on which we win.</p>
 <p>Since the state was initially a random permutation of $\{ 0, \ldots, 15 \}$, we may also assume there is, somewhere, a mechanism that changes the cells' numbers (based on the serial?).</p>
-<p><img src=/img/pipedream/diagram3.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Solving the grid?"></p>
+<img src=/img/pipedream/diagram3.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Solving the grid?">
 <p>From now there are two possibilities.</p>
 <ul>
 <li>Follow your intuition and manage to guess what this is all about&mldr;</li>
@@ -474,7 +474,7 @@ exit(<span style=color:#ae81ff>1</span>);
     }
 }
 </code></pre></div><p><strong>The previous cell sets its new cell number to the one sent by the next cell!</strong></p>
-<p><img src=/img/pipedream/diagram4.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Cells switching numbers"></p>
+<img src=/img/pipedream/diagram4.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Cells switching numbers">
 <p>This is how we are able to move the cells. With this information in our possession, we could already start solving the puzzle&mldr;</p>
 <p><strong>Acknowledge</strong></p>
 <pre tabindex=0><code>[msgType (1 byte)]
@@ -482,7 +482,7 @@ exit(<span style=color:#ae81ff>1</span>);
 <li><code>msgType</code> must be <code>'A'</code></li>
 </ul>
 <p>This message is used by a child process to acknowledge they received a <em>Send old cell number</em> message. It is primarily useful for synchronization purposes: the new cell will not process the remaining part of the serial before it received this acknowledgement.</p>
-<p><img src=/img/pipedream/diagram5.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Acknowledge message"></p>
+<img src=/img/pipedream/diagram5.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Acknowledge message">
 <p><strong>Ask master for verification</strong></p>
 <pre tabindex=0><code>[msgType (1 byte)]
 </code></pre><ul>
@@ -522,11 +522,11 @@ exit(<span style=color:#ae81ff>1</span>);
 }
 </code></pre></div><h2 id=puzzle-state-machine>Puzzle state machine</h2>
 <p>Now that we have acquired a deeper understanding of the binary, we can try to summarize its inner workings schematically.</p>
-<p><img src=/img/pipedream/state_machine.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Puzzle state machine"></p>
+<img src=/img/pipedream/state_machine.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Puzzle state machine">
 <p>So&mldr; does it ring a bell?</p>
 <p>If not, let me introduce you to the <a href=https://en.wikipedia.org/wiki/15_puzzle><strong>Fifteen Puzzle</strong></a>!</p>
 <p>The <em>Fifteen Puzzle</em> is a sliding puzzle with a $4 \times 4$ grid that has 15 square tiles and one hole. Tiles are associated a number and can slide. When you slide a tile next to a hole, it fills this hole, but also of course creates a new hole.</p>
-<p><img src=/img/pipedream/fifteen_puzzle.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Puzzle state machine"></p>
+<img src=/img/pipedream/fifteen_puzzle.png style="margin:0 auto;margin-top:2em;margin-bottom:2em" alt="Puzzle state machine">
 <p>The goal is to rearrange the tiles from $1$ to $15$. Depending on variants, the hole has to eventually sit in the top-left corner or the bottom-right corner. There are also variants where the goal is to unscramble a picture.</p>
 <p>In our case, the hole is represented by the cell number $0$. When two cells swap numbers, it&rsquo;s actually the second cell that fills the place of the old $0$ cell — this is how tiles slide.</p>
 <p><strong>In conclusion, the username is used to derive a random instance of a <em>Fifteen Puzzle</em> game, and the serial encodes which tile slides at each step. The goal is to solve the puzzle!</strong></p>
