@@ -24,28 +24,28 @@ you can prevent Steam from pulling updates automatically.</p><pre tabindex=0><co
 </span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> ( <span style=color:#f92672>*</span>((_DWORD <span style=color:#f92672>*</span>)FileContents <span style=color:#f92672>+</span> <span style=color:#ae81ff>17</span>) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span> )
 </span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> ERR;
 </span></span></code></pre></div><p>Something related to Valve? What could it mean? Let&rsquo;s check it out inside an actual binary from the Steam folder:</p><pre style=background:rgba(20,20,40,.9)>
-<span style=color:#fff>╭─</span><b><span style=color:#67f86f>face@0xff</span></b><span style=color:#fff> </span><b><span style=color:#6a76fb>~/Steam </span></b><span style=color:#fff>                                                                        </span>
+<span style=color:#fff>╭─</span><b><span style=color:#67f86f>face@0xff</span></b><span style=color:#fff> </span><b><span style=color:#6a76fb>~/Steam </span></b><span style=color:#fff></span>
 <span style=color:#fff>╰─</span><b><span style=color:#fff>$</span></b><span style=color:#fff> hexdump -C steamerrorreporter.exe | head -n 20</span>
-<span style=color:#fff>00000000  4d 5a 90 00 03 00 00 00  04 00 00 00 ff ff 00 00  |MZ..............|                  </span>
-<span style=color:#fff>00000010  b8 00 00 00 00 00 00 00  40 00 00 00 00 00 00 00  |........@.......|                  </span>
-<span style=color:#fff>00000020  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|                  </span>
-<span style=color:#fff>00000030  00 00 00 00 00 00 00 00  00 00 00 00 10 01 00 00  |................|                  </span>
-<span style=color:#fff>00000040  </span><span style=color:#8f0>56 4c 56 00</span> <span style=color:#8ff>01 00 00 00</span>  <span style=color:#f08>00 94 08 00</span> <span style=color:#f8f>0b ab c0 63</span>  <span style=color:#fff>|</span><span style=color:#8f0>VLV.</span><span style=color:#8ff>....</span><span style=color:#f08>....</span><span style=color:#f8f>...c</span><span style=color:#fff>|                  </span>
-<span style=color:#ff8>00000050  9c ba 32 41 f5 6d 22 8c  89 b3 65 89 56 71 82 2b  |..2A.m"...e.Vq.+|                  </span>
-<span style=color:#ff8>00000060  e3 9f 76 d2 8e c9 06 53  cb 07 ae 53 15 4c 57 7a  |..v....S...S.LWz|                  </span>
-<span style=color:#ff8>00000070  58 c3 f7 84 69 16 43 6d  7a 1b b0 fb 30 48 75 d1  |X...i.Cmz...0Hu.|                  </span>
-<span style=color:#ff8>00000080  67 fc 7c f8 87 30 5d 26  8e 78 58 a0 ed 70 3a d8  |g.|..0]&.xX..p:.|                  </span>
-<span style=color:#ff8>00000090  c3 a5 b0 0f ca ae 11 61  9d 80 29 ff 13 eb e6 9a  |.......a..).....|                  </span>
-<span style=color:#ff8>000000a0  f9 4a b8 fa d9 b3 cb b2  78 b0 ea da 09 a1 88 14  |.J......x.......|                  </span>
-<span style=color:#ff8>000000b0  05 65 98 68 90 0b a3 f9  42 b1 a3 24 ca 37 24 f4  |.e.h....B..$.7$.|                  </span>
-<span style=color:#ff8>000000c0  6f df 36 c5 a9 3d 14 19  47 d9 39 73 16 e8 9f e9  |o.6..=..G.9s....|                  </span>
-<span style=color:#fff>000000d0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|                  </span>
-<span style=color:#fff>*                                                                                               </span>
-<span style=color:#fff>00000110  50 45 00 00 4c 01 05 00  09 ab c0 63 00 00 00 00  |PE..L......c....|                  </span>
-<span style=color:#fff>00000120  00 00 00 00 e0 00 02 01  0b 01 0e 1d 00 d6 02 00  |................|                  </span>
-<span style=color:#fff>00000130  00 ba 05 00 00 00 00 00  e6 9c 00 00 00 10 00 00  |................|                  </span>
-<span style=color:#fff>00000140  00 f0 02 00 00 00 40 00  00 10 00 00 00 02 00 00  |......@.........|                  </span>
-<span style=color:#fff>00000150  06 00 00 00 00 00 00 00  06 00 00 00 00 00 00 00  |................|  </span>
+<span style=color:#fff>00000000  4d 5a 90 00 03 00 00 00  04 00 00 00 ff ff 00 00  |MZ..............|</span>
+<span style=color:#fff>00000010  b8 00 00 00 00 00 00 00  40 00 00 00 00 00 00 00  |........@.......|</span>
+<span style=color:#fff>00000020  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</span>
+<span style=color:#fff>00000030  00 00 00 00 00 00 00 00  00 00 00 00 10 01 00 00  |................|</span>
+<span style=color:#fff>00000040  </span><span style=color:#8f0>56 4c 56 00</span> <span style=color:#8ff>01 00 00 00</span>  <span style=color:#f08>00 94 08 00</span> <span style=color:#f8f>0b ab c0 63</span>  <span style=color:#fff>|</span><span style=color:#8f0>VLV.</span><span style=color:#8ff>....</span><span style=color:#f08>....</span><span style=color:#f8f>...c</span><span style=color:#fff>|</span>
+<span style=color:#ff8>00000050  9c ba 32 41 f5 6d 22 8c  89 b3 65 89 56 71 82 2b  |..2A.m"...e.Vq.+|</span>
+<span style=color:#ff8>00000060  e3 9f 76 d2 8e c9 06 53  cb 07 ae 53 15 4c 57 7a  |..v....S...S.LWz|</span>
+<span style=color:#ff8>00000070  58 c3 f7 84 69 16 43 6d  7a 1b b0 fb 30 48 75 d1  |X...i.Cmz...0Hu.|</span>
+<span style=color:#ff8>00000080  67 fc 7c f8 87 30 5d 26  8e 78 58 a0 ed 70 3a d8  |g.|..0]&.xX..p:.|</span>
+<span style=color:#ff8>00000090  c3 a5 b0 0f ca ae 11 61  9d 80 29 ff 13 eb e6 9a  |.......a..).....|</span>
+<span style=color:#ff8>000000a0  f9 4a b8 fa d9 b3 cb b2  78 b0 ea da 09 a1 88 14  |.J......x.......|</span>
+<span style=color:#ff8>000000b0  05 65 98 68 90 0b a3 f9  42 b1 a3 24 ca 37 24 f4  |.e.h....B..$.7$.|</span>
+<span style=color:#ff8>000000c0  6f df 36 c5 a9 3d 14 19  47 d9 39 73 16 e8 9f e9  |o.6..=..G.9s....|</span>
+<span style=color:#fff>000000d0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|</span>
+<span style=color:#fff>*                                                                             </span>
+<span style=color:#fff>00000110  50 45 00 00 4c 01 05 00  09 ab c0 63 00 00 00 00  |PE..L......c....|</span>
+<span style=color:#fff>00000120  00 00 00 00 e0 00 02 01  0b 01 0e 1d 00 d6 02 00  |................|</span>
+<span style=color:#fff>00000130  00 ba 05 00 00 00 00 00  e6 9c 00 00 00 10 00 00  |................|</span>
+<span style=color:#fff>00000140  00 f0 02 00 00 00 40 00  00 10 00 00 00 02 00 00  |......@.........|</span>
+<span style=color:#fff>00000150  06 00 00 00 00 00 00 00  06 00 00 00 00 00 00 00  |................|</span>
 </pre><p>There is a custom block of data sitting between the DOS header and the NT header, in place of the usual DOS stub. It is composed of a <span style=text-decoration:underline;text-decoration-color:#8f0>magic number</span> (VLV), a <span style=text-decoration:underline;text-decoration-color:#8ff>version number</span> (1), a <span style=text-decoration:underline;text-decoration-color:#f08>signed data size</span>, a <span style=text-decoration:underline;text-decoration-color:#f8f>timestamp</span>, and a <span style=text-decoration:underline;text-decoration-color:#ff8>128-byte signature</span>.</p><p>Later on, this <span style=text-decoration:underline;text-decoration-color:#ff8>128-byte signature</span> (highlighted in yellow) is extracted from this header, and null bytes are put in place of the extracted data:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span>qmemcpy(sig, FileContents <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x50</span>, <span style=color:#ae81ff>0x80</span>);
 </span></span><span style=display:flex><span>memset_(FileContents <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x50</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0x80</span>);
 </span></span></code></pre></div><p>Eventually, the function loops through a list of <strong>Valve public keys</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span>SignatureOK <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
