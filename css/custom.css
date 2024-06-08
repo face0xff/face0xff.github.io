@@ -21,3 +21,29 @@ a {
   text-underline-offset: 3px;
   text-decoration-color: #808080;
 }
+
+.challenge-tag {
+  background-color: var(--background-secondary);
+  color: var(--color);
+  padding: 2px 8px;
+  margin-bottom: 0.5em;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.spoiler {
+	filter: blur(4px);
+	transition-property: -webkit-filter;
+	transition-duration: .3s;
+}
+
+.spoiler:hover, .spoiler:focus {
+	filter: blur(0);
+}
+
+hr {
+  margin-top: 2em;
+}
