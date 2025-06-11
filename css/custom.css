@@ -2,6 +2,10 @@ body {
   font-feature-settings: "liga" 0, "tnum", "case" 0, "calt", "zero" 0, "ss01", "locl";
 }
 
+.index-content {
+  margin-bottom: 1.5em;
+}
+
 .post-content p {
   text-align: justify !important;
 }
@@ -18,7 +22,8 @@ table {
 }
 
 a {
-  text-underline-offset: 3px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   text-decoration-color: #808080;
 }
 
@@ -46,4 +51,8 @@ a {
 
 hr {
   margin-top: 2em;
+}
+
+h2 {
+  margin-block-start: 1.5em;
 }
