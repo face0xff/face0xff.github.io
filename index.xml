@@ -26,12 +26,12 @@ The goal is to spawn a reverse shell on another player&amp;rsquo;s machine solel
 &lt;/ul&gt;
 &lt;h2 id="cves"&gt;CVEs&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;CVE-2025-XXXXX, CVE-2025-XXXXX in Kindle OS — Remote Code Execution, Local Privilege Escalation (TBA)&lt;/li&gt;
-&lt;li&gt;&lt;a href="/cves/cve-2023-51364-51365-qnap-qts-rce"&gt;CVE-2023-51364, CVE-2023-51365 in QNAP QTS — Remote Code Execution&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/cves/cve-2021-38666-microsoft-rdp-client-rce"&gt;CVE-2021-38666 in Windows — Remote Code Execution in the RDP client&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/cves/cve-2021-38665-microsoft-rdp-client-heap-leak"&gt;CVE-2021-38665 in Windows — Remote Heap Leak in the RDP client&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/cves/cve-2021-37595-freerdp-remote-arbitrary-file-read"&gt;CVE-2021-37595 in FreeRDP — Remote Arbitrary File Read&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/cves/cve-2021-37594-freerdp-remote-memory-leak"&gt;CVE-2021-37594 in FreeRDP — Remote Memory Leak&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CVE-2025-TBA, CVE-2025-TBA in Kindle OS: RCE, LPE&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2023-51364-51365-qnap-qts-rce"&gt;CVE-2023-51364, CVE-2023-51365 in QNAP QTS: RCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2021-38666-microsoft-rdp-client-rce"&gt;CVE-2021-38666 in Windows: RCE in the RDP client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2021-38665-microsoft-rdp-client-heap-leak"&gt;CVE-2021-38665 in Windows: Remote Heap Leak in the RDP client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2021-37595-freerdp-remote-arbitrary-file-read"&gt;CVE-2021-37595 in FreeRDP: Remote Arbitrary File Read&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2021-37594-freerdp-remote-memory-leak"&gt;CVE-2021-37594 in FreeRDP: Remote Memory Leak&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="other"&gt;Other&lt;/h2&gt;
 &lt;ul&gt;
