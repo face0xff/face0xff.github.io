@@ -5,33 +5,35 @@ In Microsoft Remote Desktop, a malicious RDP server could remotely leak heap mem
 In FreeRDP &lt; 2.4.0 (Windows), a malicious RDP server can remotely read arbitrary files from a client's system through the clipboard extension (enabled by default).</description></item><item><title>CVE-2021-37594 in FreeRDP — Remote Memory Leak</title><link>/cves/cve-2021-37594-freerdp-remote-memory-leak/</link><pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate><guid>/cves/cve-2021-37594-freerdp-remote-memory-leak/</guid><description>
 In FreeRDP &lt; 2.4.0 (Windows), a malicious RDP server can remotely leak memory from a client's system through the clipboard extension (enabled by default).</description></item><item><title>SSTIC Challenge 2025: Writeup</title><link>/posts/sstic-challenge-2025-writeup/</link><pubDate>Thu, 12 Jun 2025 00:00:00 +0200</pubDate><guid>/posts/sstic-challenge-2025-writeup/</guid><description>
 A detailed walkthrough of the renowned SSTIC challenge's 2025 edition, featuring reverse engineering, deobfuscation, browser exploit, cryptography and steganography.</description></item><item><title>Patching Steam binaries</title><link>/posts/patching-steam-binaries/</link><pubDate>Sat, 04 Feb 2023 00:00:00 +0000</pubDate><guid>/posts/patching-steam-binaries/</guid><description>
-&lt;p>Patching Steam executable files can prove useful for diverse purposes, one of those being vulnerability research in the Steam client. This short post will explain how you can circumvent a few obstacles to achieve that, before presenting an applied example.&lt;/p></description></item><item><title>ECW CTF 2021: Pipe Dream (Writeup)</title><link>/posts/ecw-ctf-2021-pipe-dream-writeup/</link><pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/ecw-ctf-2021-pipe-dream-writeup/</guid><description>
+&lt;p&gt;Patching Steam executable files can prove useful for diverse purposes, one of those being vulnerability research in the Steam client. This short post will explain how you can circumvent a few obstacles to achieve that, before presenting an applied example.&lt;/p&gt;</description></item><item><title>ECW CTF 2021: Pipe Dream (Writeup)</title><link>/posts/ecw-ctf-2021-pipe-dream-writeup/</link><pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate><guid>/posts/ecw-ctf-2021-pipe-dream-writeup/</guid><description>
 From October 8th to October 24th took place the online qualification round for the European Cyber Week CTF Finals, that are held every year in Rennes, France. I had the opportunity to create a reverse engineering challenge for this event as part of an internship at Thalium.</description></item><item><title>About me</title><link>/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/</guid><description>
-&lt;p>I am a security researcher at &lt;a href="https://thalium.re">Thalium&lt;/a>.&lt;/p>
-&lt;p>I specialize in reverse engineering and vulnerability research. I am interested in low level security, fuzzing, binary exploitation techniques and mitigations. I also enjoy cryptography.&lt;/p>
-&lt;p>Previously, I have played CTFs with &lt;a href="https://ctftime.org/team/89273">SHRECS&lt;/a>, a team that I created with fellow students of my university. During that time, we helped promoting the CTF culture in CentraleSupélec, and won multiple competitions such as Imperial CTF, HackDay, THCon CTF and Orange CTF.&lt;/p></description></item><item><title>Challenges</title><link>/challenges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/challenges/</guid><description>
-&lt;p>As much as I love solving CTF challenges, I also greatly enjoy designing my own puzzles.
-This page indexes some challenges I have created in the past for various occasions (not an exhaustive list).&lt;/p>
-&lt;hr>
-&lt;h2 id="sstic-2024-the-green-shard-brawl">SSTIC 2024: The Green Shard Brawl&lt;/h2>
-&lt;p>&lt;span class="challenge-tag">#pwn&lt;/span> &lt;span class="challenge-tag">#linux&lt;/span> &lt;span class="challenge-tag">#heap&lt;/span>&lt;/p>
-&lt;p>A binary exploitation problem created for the renowned, annual SSTIC challenge.
+&lt;p&gt;I am a security researcher at &lt;a href="https://thalium.re"&gt;Thalium&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I specialize in reverse engineering and vulnerability research. I am interested in low level security, fuzzing, binary exploitation techniques and mitigations. I also enjoy cryptography.&lt;/p&gt;
+&lt;p&gt;Previously, I have played CTFs with &lt;a href="https://ctftime.org/team/89273"&gt;SHRECS&lt;/a&gt;, a team that I created with fellow students of my university. During that time, we helped promoting the CTF culture in CentraleSupélec, and won multiple competitions such as Imperial CTF, HackDay, THCon CTF and Orange CTF.&lt;/p&gt;</description></item><item><title>Challenges</title><link>/challenges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/challenges/</guid><description>
+&lt;p&gt;As much as I love solving CTF challenges, I also greatly enjoy designing my own puzzles.
+This page indexes some challenges I have created in the past for various occasions (not an exhaustive list).&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="sstic-2024-the-green-shard-brawl"&gt;SSTIC 2024: The Green Shard Brawl&lt;/h2&gt;
+&lt;p&gt;&lt;span class="challenge-tag"&gt;#pwn&lt;/span&gt; &lt;span class="challenge-tag"&gt;#linux&lt;/span&gt; &lt;span class="challenge-tag"&gt;#heap&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;A binary exploitation problem created for the renowned, annual SSTIC challenge.
 It consists of a Linux client for a multi-player SDL game written in C, and a Python server that implements a custom protocol.
-The goal is to spawn a reverse shell on another player&amp;rsquo;s machine solely by interacting with the server.&lt;/p></description></item><item><title>Research</title><link>/research/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/research/</guid><description>
-&lt;h2 id="talks">Talks&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://www.sstic.org/2023/presentation/bug_hunting_in_steam_remote_play/">Bug hunting in Steam: a journey into the Remote Play protocol&lt;/a> (SSTIC 2023) (&lt;a href="https://www.sstic.org/media/SSTIC2023/SSTIC-actes/bug_hunting_in_steam_remote_play/SSTIC2023-Article-bug_hunting_in_steam_remote_play-ricotta.pdf">paper&lt;/a>)&lt;/li>
-&lt;li>&lt;a href="https://www.sstic.org/2022/presentation/fuzzing_microsofts_rdp_client_using_virtual_channels/">Fuzzing Microsoft&amp;rsquo;s RDP Client using Virtual Channels&lt;/a> (SSTIC 2022) (&lt;a href="https://www.sstic.org/media/SSTIC2022/SSTIC-actes/fuzzing_microsofts_rdp_client_using_virtual_channe/SSTIC2022-Article-fuzzing_microsofts_rdp_client_using_virtual_channels-ricotta.pdf">paper&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;h2 id="cves">CVEs&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="/cves/cve-2023-51364-51365-qnap-qts-rce">CVE-2023-51364, CVE-2023-51365 in QNAP QTS — Remote Code Execution&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/cves/cve-2021-38666-microsoft-rdp-client-rce">CVE-2021-38666 in Windows — Remote Code Execution in the RDP client&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/cves/cve-2021-38665-microsoft-rdp-client-heap-leak">CVE-2021-38665 in Windows — Remote Heap Leak in the RDP client&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/cves/cve-2021-37595-freerdp-remote-arbitrary-file-read">CVE-2021-37595 in FreeRDP — Remote Arbitrary File Read&lt;/a>&lt;/li>
-&lt;li>&lt;a href="/cves/cve-2021-37594-freerdp-remote-memory-leak">CVE-2021-37594 in FreeRDP — Remote Memory Leak&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="other">Other&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://blog.thalium.re/posts/achieving-remote-code-execution-in-steam-remote-play/">Remote Code Execution in Steam Remote Play&lt;/a>&lt;/li>
-&lt;/ul></description></item></channel></rss>
+The goal is to spawn a reverse shell on another player&amp;rsquo;s machine solely by interacting with the server.&lt;/p&gt;</description></item><item><title>Research</title><link>/research/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/research/</guid><description>
+&lt;h2 id="talks"&gt;Talks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t judge an audiobook by its cover: taking over your Amazon account with a Kindle @ &lt;a href="https://www.blackhat.com/eu-25/briefings/schedule/index.html#dont-judge-an-audiobook-by-its-cover-taking-over-your-amazon-account-with-a-kindle-48836"&gt;Black Hat Europe 2025&lt;/a&gt;, &lt;a href="https://codeblue.jp/en/program/time-table/day1-t1-04/"&gt;CODE BLUE 2025&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Bug hunting in Steam: a journey into the Remote Play protocol @ &lt;a href="https://www.sstic.org/2023/presentation/bug_hunting_in_steam_remote_play/"&gt;SSTIC 2023&lt;/a&gt; (&lt;a href="https://www.sstic.org/media/SSTIC2023/SSTIC-actes/bug_hunting_in_steam_remote_play/SSTIC2023-Article-bug_hunting_in_steam_remote_play-ricotta.pdf"&gt;paper&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fuzzing Microsoft&amp;rsquo;s RDP Client using Virtual Channels @ &lt;a href="https://www.sstic.org/2022/presentation/fuzzing_microsofts_rdp_client_using_virtual_channels/"&gt;SSTIC 2022&lt;/a&gt; (&lt;a href="https://www.sstic.org/media/SSTIC2022/SSTIC-actes/fuzzing_microsofts_rdp_client_using_virtual_channe/SSTIC2022-Article-fuzzing_microsofts_rdp_client_using_virtual_channels-ricotta.pdf"&gt;paper&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="cves"&gt;CVEs&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CVE-2025-XXXXX, CVE-2025-XXXXX in Kindle OS — Remote Code Execution, Local Privilege Escalation (TBA)&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2023-51364-51365-qnap-qts-rce"&gt;CVE-2023-51364, CVE-2023-51365 in QNAP QTS — Remote Code Execution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2021-38666-microsoft-rdp-client-rce"&gt;CVE-2021-38666 in Windows — Remote Code Execution in the RDP client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2021-38665-microsoft-rdp-client-heap-leak"&gt;CVE-2021-38665 in Windows — Remote Heap Leak in the RDP client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2021-37595-freerdp-remote-arbitrary-file-read"&gt;CVE-2021-37595 in FreeRDP — Remote Arbitrary File Read&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cves/cve-2021-37594-freerdp-remote-memory-leak"&gt;CVE-2021-37594 in FreeRDP — Remote Memory Leak&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="other"&gt;Other&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://blog.thalium.re/posts/achieving-remote-code-execution-in-steam-remote-play/"&gt;Remote Code Execution in Steam Remote Play&lt;/a&gt; (2023)&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
