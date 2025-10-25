@@ -27,6 +27,10 @@ a {
   text-decoration-color: #808080;
 }
 
+.copyright a {
+  text-decoration: none;
+}
+
 .challenge-tag {
   background-color: var(--background-secondary);
   color: var(--color);
